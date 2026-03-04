@@ -18,11 +18,9 @@ namespace actividad_10__10
             int.TryParse(Console.ReadLine(), out int lim);
             for (int i = 0; i < lim; i++)
             {
-
-
-                Console.WriteLine($"Ingrese  ID NO.{i + 1} de 3 productos");
-                int.TryParse(Console.ReadLine(), out Id);
-                if (estudiante.ContainsKey(Id))
+                Console.WriteLine($"Ingrese  ID NO.{i + 1} de {lim} productos");
+                int.TryParse(Console.ReadLine(), out ID);
+                if (producto.ContainsKey(ID))
                 {
                     Console.WriteLine("ID ya ingresado");
                     i--;
@@ -32,7 +30,7 @@ namespace actividad_10__10
                 {
                     Console.WriteLine("ingrese nombre:");
                     nombre = Console.ReadLine();
-                    estudiante.Add(Id, nombre);
+                    producto.Add(ID, nombre);
 
                 }
 
@@ -40,11 +38,11 @@ namespace actividad_10__10
             bool validar = false;
             while (validar != true)
             {
-                    Console.WriteLine("ingrese ID de estudiante que desea elimar");
-                int.TryParse(Console.ReadLine(), out Id);
-                if (estudiante.ContainsKey(Id))
+                    Console.WriteLine("ingrese ID de producto que desea elimar");
+                int.TryParse(Console.ReadLine(), out ID);
+                if (producto.ContainsKey(ID))
                 {
-                    estudiante.Remove(Id);
+                    producto.Remove(ID);
                     validar = true;
                 }
                 else
@@ -52,7 +50,7 @@ namespace actividad_10__10
                     Console.WriteLine("ID invalido");
                 }
             }
-            foreach (var item in estudiante)
+            foreach (var item in producto)
             {
                 Console.WriteLine("prodcuto Id: " + item.Key + "valor: " + item.Value);
 
