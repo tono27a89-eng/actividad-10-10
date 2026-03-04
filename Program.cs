@@ -11,9 +11,12 @@ namespace actividad_10__10
         static void Main(string[] args)
         {
             Console.WriteLine("Cree un diccionario de inventario. Permita al usuario eliminar un producto ingresando su código.");
-
-
-            for (int i = 0; i < 3; i++)
+            Dictionary<int, String> producto = new Dictionary<int, String>();
+            int ID;
+            string nombre;
+            Console.WriteLine("ingrese numero de productos");
+            int.TryParse(Console.ReadLine(), out int lim);
+            for (int i = 0; i < lim; i++)
             {
 
 
@@ -37,9 +40,7 @@ namespace actividad_10__10
             bool validar = false;
             while (validar != true)
             {
-
-
-                Console.WriteLine("ingrese ID de estudiante que desea elimar");
+                    Console.WriteLine("ingrese ID de estudiante que desea elimar");
                 int.TryParse(Console.ReadLine(), out Id);
                 if (estudiante.ContainsKey(Id))
                 {
